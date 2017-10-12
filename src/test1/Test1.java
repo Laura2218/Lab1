@@ -19,24 +19,6 @@ public class Test1 {
 			}
 		});
 		
-		//Graph g = new Graph();
-	    //g.createGraph("D://test2.txt");
-		//g.showDirectedGraph();
-		//System.out.println(g.queryBridgeWords("strange", "worlds"));
-		//System.out.println(g.queryBridgeWords("strane", "worlds"));
-		//System.out.println(g.queryBridgeWords("new", "and"));
-		//System.out.println(g.queryBridgeWords("seek", "to"));
-	//	System.out.println(g.randomWalk());
-	//	System.out.println(g.randomWalk());
-	//	System.out.println(g.randomWalk());
-		//System.out.println(Arrays.toString(g.calcShortesePath("to", null)));
-	//	System.out.println(Arrays.toString(g.calcShortesePath("to","worlds")));
-		
-		//Scanner in = new Scanner(System.in);
-		//System.out.println("Input:");
-		//String s = in.nextLine();
-		//System.out.println(g.generateNewText(s));
-		
 		
 		//To@explore strange ne1w worlds,
 		//To seek out new life and new civilizations
