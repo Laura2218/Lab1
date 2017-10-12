@@ -2,9 +2,6 @@ package test1;
 
 import java.awt.EventQueue;
 import java.io.IOException;
-import java.util.Arrays;
-import java.util.Scanner;
-
 import javax.swing.JFrame;
 
 public class Test1 {

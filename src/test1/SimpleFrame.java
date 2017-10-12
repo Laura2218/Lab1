@@ -25,6 +25,8 @@ import javax.swing.filechooser.FileSystemView;
 
 public class SimpleFrame extends JFrame {
 	
+	
+	private static final long serialVersionUID = 1L;
 	JTextField textField,textField1,textField2;
 	int cnt,piccnt,randPath;
 	int width = 400, height = 600;
