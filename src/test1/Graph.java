@@ -96,7 +96,6 @@ public class Graph {
 		in.close();
 		String words = word.toString().toLowerCase(); 
 		String[] word_arr = words.split("\\s+");
-		// System.out.println(Arrays.toString(word_arr));
 		
 		addVertex(word_arr[0]);
 		for(int i = 1;i<word_arr.length;i++)
