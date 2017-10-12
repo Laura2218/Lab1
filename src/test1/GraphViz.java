@@ -18,6 +18,7 @@ class  GraphViz{
 
     Runtime runtime=Runtime.getRuntime();
 
+    // i : serial number of the file
     public void run(int i) {
         File file=new File(runPath);
         file.mkdirs();

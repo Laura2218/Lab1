@@ -364,26 +364,3 @@ public class SimpleFrame extends JFrame {
 		}
 	}
 }
-
-
-/*
-class ImageComponent extends JPanel
-{
-	public static final int DEFAULT_WIDTH = 300;
-	public static final int DEFAULT_HEIGHT = 200;
-	
-	private Image image;
-	
-	public ImageComponent(int i)
-	{
-		image = new ImageIcon("D://temp/dotGif"+i+".gif").getImage();
-	}
-	
-	public void paintComponent(Graphics g)  //绘制组件
-	{
-		if(image==null) return;
-		g.drawImage(image, 0, 0, null);
-	}
-	
-	public Dimension getPerferredSize() { return new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT); } //组件大小？
-}*/

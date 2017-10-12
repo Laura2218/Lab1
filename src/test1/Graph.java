@@ -485,10 +485,6 @@ public class Graph {
 	{
 		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "F://files/release//bin//dot.exe");
         g.start_graph();
-    	System.out.println("");
-    	System.out.println("*************");
-    	for(int k : randomPath) System.out.print(digraph.get(k).vertexNode+"  ");
-		System.out.println("");
         for (int i = 0;i<digraph.size();i++)
         {
         	Vertex v = digraph.get(i);
