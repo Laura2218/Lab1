@@ -1,4 +1,4 @@
-package test1;
+package version4;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -9,7 +9,7 @@ import java.util.Stack;
 
 
 public class Graph {
-	private int verNum;
+	private int verNum;  // number of vertex
 	private ArrayList<Vertex> digraph;
 	private ArrayList<Integer> randomPath = new ArrayList<>();
 	private int lastLoc,cnt;
@@ -96,7 +96,7 @@ public class Graph {
 		in.close();
 		String words = word.toString().toLowerCase(); 
 		String[] word_arr = words.split("\\s+");
-		
+				
 		addVertex(word_arr[0]);
 		for(int i = 1;i<word_arr.length;i++)
 		{
@@ -446,6 +446,7 @@ public class Graph {
 		}
 	}
 	
+
 	public void showRandomWalk(int cnt)
 	{
 		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "F://files/release//bin//dot.exe");
@@ -477,7 +478,6 @@ public class Graph {
 
 	
 }
-
 
 
 

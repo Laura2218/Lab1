@@ -1,4 +1,4 @@
-package test1;
+package version4;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -23,6 +23,7 @@ import javax.swing.SwingConstants;
 import javax.swing.filechooser.FileSystemView;
 
 
+
 public class SimpleFrame extends JFrame {
 	
 	
@@ -30,43 +31,47 @@ public class SimpleFrame extends JFrame {
 	JTextField textField,textField1,textField2;
 	int cnt,piccnt,randPath;
 	int width = 400, height = 600;
+
 	
 	String fName;
 	
 	public SimpleFrame()
 	{
-		//è·å–åˆ†è¾¨ç‡
+
+		//»ñÈ¡·Ö±æÂÊ
 		Toolkit kit= Toolkit.getDefaultToolkit();
 		Dimension screenSize=kit.getScreenSize();
 		int screenHeight=screenSize.height;
 		int screenWidth = screenSize.width;
 		
-		//è®¾ç½®æ¡†æ¶é•¿å®½åŠä½ç½®
+
+		//git test3
+		//remote test
+		//ÉèÖÃ¿ò¼Ü³¤¿í¼°Î»ÖÃ
 		//add(new ImageComponent());
 		setSize(screenWidth/2,screenHeight/2);
 		setLocationByPlatform(true);
 		//setLayout(new FlowLayout());
 		
-		//æ·»åŠ æŒ‰é’®åŠæ–‡æœ¬æ¡†æˆ‘
+		//Ìí¼Ó°´Å¥¼°ÎÄ±¾¿òÎÒ
 		JPanel northpanel=new JPanel();
 		setLayout(new BorderLayout(10,10));
 		northpanel.add(new JLabel("FileName:",SwingConstants.RIGHT));
 		textField = new JTextField(20);
 		northpanel.add(textField);
-		JButton scanButton=new JButton("æµè§ˆ");
-		JButton certainButton =new JButton("ç¡®å®š");
+
+		JButton scanButton=new JButton("ä¯ÀÀ");
+		JButton certainButton =new JButton("È·¶¨");
 		northpanel.add(scanButton);
 		northpanel.add(certainButton);
 		
 		add(northpanel,BorderLayout.NORTH);
-		//String fileName=textField.getText().trim();
 		JPanel southPanel = new JPanel();
 		
 		add(southPanel,BorderLayout.SOUTH);
 		
 		JLabel centerPanel = new JLabel();
 		JScrollPane scollPane1=new JScrollPane(centerPanel);
-		//centerPanel.setBounds(0,0, screenWidth/2, screenHeight);
 		scollPane1.setPreferredSize(new Dimension(screenWidth/3*2, screenHeight));
 		add(scollPane1,BorderLayout.WEST);
 		
@@ -80,7 +85,8 @@ public class SimpleFrame extends JFrame {
 		//JPanel eastPanel = new JPanel();
 		//add(eastPanel,BorderLayout.EAST);
 		
-		//è®¾ç½®ç›‘å¬
+
+		//ÉèÖÃ¼àÌı
 		ScanAction scanAction=new ScanAction();
 		scanButton.addActionListener(scanAction);
 		
@@ -93,14 +99,14 @@ public class SimpleFrame extends JFrame {
 				try {
 					graph.createGraph(textField.getText());
 				} catch (IOException e) {
-					// TODO è‡ªåŠ¨ç”Ÿæˆçš„ catch å—
+					// TODO ×Ô¶¯Éú³ÉµÄ catch ¿é
 					e.printStackTrace();
 				}
-				JButton showButton= new JButton("å±•ç¤ºæœ‰å‘å›¾");
-				JButton spButton = new JButton("æœ€çŸ­è·¯å¾„æŸ¥è¯¢");
-				JButton rdButton = new JButton("éšæœºæ¸¸èµ°");
-				JButton qbButton = new JButton("æŸ¥è¯¢æ¡¥æ¥è¯");
-				JButton gtButton = new JButton("ç”Ÿæˆæ–°æ–‡æœ¬");
+				JButton showButton= new JButton("Õ¹Ê¾ÓĞÏòÍ¼");
+				JButton spButton = new JButton("×î¶ÌÂ·¾¶²éÑ¯");
+				JButton rdButton = new JButton("Ëæ»úÓÎ×ß");
+				JButton qbButton = new JButton("²éÑ¯ÇÅ½Ó´Ê");
+				JButton gtButton = new JButton("Éú³ÉĞÂÎÄ±¾");
 				southPanel.add(showButton);
 				southPanel.add(spButton);
 				southPanel.add(rdButton);
@@ -128,8 +134,7 @@ public class SimpleFrame extends JFrame {
 						northpanel.add(new JLabel("word2:",SwingConstants.CENTER));
 						textField2 = new JTextField(20);
 						northpanel.add(textField2);
-						
-						JButton cButton = new JButton("ç¡®å®š");
+						JButton cButton = new JButton("È·¶¨");
 						northpanel.add(cButton);
 						
 						validate();
@@ -154,7 +159,7 @@ public class SimpleFrame extends JFrame {
 						textField1 = new JTextField(20);
 						northpanel.add(textField1);
 						
-						JButton cButton = new JButton("ç¡®å®š");
+						JButton cButton = new JButton("È·¶¨");
 						northpanel.add(cButton);
 						
 						validate();
@@ -185,10 +190,10 @@ public class SimpleFrame extends JFrame {
 						textField2 = new JTextField(20);
 						northpanel.add(textField2);
 						
-						JButton cButton = new JButton("ç¡®å®š");
+						JButton cButton = new JButton("È·¶¨");
 						northpanel.add(cButton);
 
-						JButton nextButton = new JButton("ä¸‹ä¸€æ¡");
+						JButton nextButton = new JButton("ÏÂÒ»Ìõ");
 						northpanel.add(nextButton);
 						
 						validate();
@@ -203,8 +208,9 @@ public class SimpleFrame extends JFrame {
 								      
 										path=graph.calcShortesePath(word1, word2);
 										
-										if(path.length==1&&path[0].split(" ")[0].equals("No")) { textArea.append("0æ¡è·¯å¾„\n"); }
-										else { textArea.append(path.length+"æ¡è·¯å¾„\n"); }
+
+										if(path.length==1&&path[0].split(" ")[0].equals("No")) { textArea.append("0ÌõÂ·¾¶\n"); }
+										else { textArea.append(path.length+"ÌõÂ·¾¶\n"); }
 										cnt=0; piccnt=0;
 										
 										
@@ -218,11 +224,11 @@ public class SimpleFrame extends JFrame {
 								{
 									if(path[cnt].split(" ")[0].equals("No"))
 									{
-										textArea.append("ç¬¬"+(cnt+1)+"æ¡:"+path[cnt]+"\n");
+										textArea.append("µÚ"+(cnt+1)+"Ìõ:"+path[cnt]+"\n");
 									}
 									else
 									{
-										textArea.append("ç¬¬"+(cnt+1)+"æ¡:"+path[cnt]+"\n");
+										textArea.append("µÚ"+(cnt+1)+"Ìõ:"+path[cnt]+"\n");
 										try {
 											centerPanel.setIcon(new ImageIcon(ImageIO.read(new File("D://temp/"+fName+"/sPath/dotGif"+(piccnt+1)+".gif"))));
 										} catch (IOException e) {
@@ -246,9 +252,9 @@ public class SimpleFrame extends JFrame {
 					public void actionPerformed(ActionEvent event)
 					{
 
-						JButton startButton= new JButton("å¼€å§‹");
-						JButton continueButton = new JButton("ç»§ç»­");
-						JButton stopButton = new JButton("ç»“æŸ");
+						JButton startButton= new JButton("¿ªÊ¼");
+						JButton continueButton = new JButton("¼ÌĞø");
+						JButton stopButton = new JButton("½áÊø");
 						
 						southPanel.add(startButton);
 						southPanel.add(continueButton);
