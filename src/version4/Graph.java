@@ -1,4 +1,4 @@
-package test1;
+package version4;
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -481,6 +481,7 @@ public class Graph {
 		}
 	}
 	
+
 	public void showRandomWalk(int cnt)
 	{
 		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "F://files/release//bin//dot.exe");
@@ -516,7 +517,6 @@ public class Graph {
 
 	
 }
-
 
 
 
