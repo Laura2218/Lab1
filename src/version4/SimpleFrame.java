@@ -71,7 +71,6 @@ public class SimpleFrame extends JFrame {
 		
 		JLabel centerPanel = new JLabel();
 		JScrollPane scollPane1=new JScrollPane(centerPanel);
-		//centerPanel.setBounds(0,0, screenWidth/2, screenHeight);
 		scollPane1.setPreferredSize(new Dimension(screenWidth/3*2, screenHeight));
 		add(scollPane1,BorderLayout.WEST);
 		
