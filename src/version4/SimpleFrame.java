@@ -64,7 +64,6 @@ public class SimpleFrame extends JFrame {
 		northpanel.add(certainButton);
 		
 		add(northpanel,BorderLayout.NORTH);
-		//String fileName=textField.getText().trim();
 		JPanel southPanel = new JPanel();
 		
 		add(southPanel,BorderLayout.SOUTH);

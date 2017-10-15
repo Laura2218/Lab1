@@ -4,7 +4,8 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-// GraphViz
+// GraphViz API
+// show digraph and save as .gif
 
 class  GraphViz{
     private String runPath = "";
