@@ -349,7 +349,7 @@ public class Graph {
         for (int m = 0;m<path.size();m++)
             {
         		ArrayList<Integer> p = path.get(m);
-        		GraphViz g =new GraphViz("D://temp/"+fName+"/sPath", "F://files/release//bin//dot.exe");
+        		GraphViz g =new GraphViz("D://temp/"+fName+"/sPath", "D:\\download\\graphviz-2.38\\release\\bin\\dot.exe");
                 g.start_graph();
                 for(int k : p) System.out.print(k);
             	System.out.println("");
@@ -382,7 +382,7 @@ public class Graph {
 	
 	public void showDirectedGraph()
 	{
-		GraphViz gViz=new GraphViz("D://temp/"+fName, "F://files/release//bin//dot.exe");
+		GraphViz gViz=new GraphViz("D://temp/"+fName, "D:\\download\\graphviz-2.38\\release\\bin\\dot.exe");
         System.out.println("D://temp/"+fName);
 		gViz.start_graph();
         for (Vertex v:digraph)
@@ -484,7 +484,7 @@ public class Graph {
 	
 	public void showRandomWalk(int cnt)
 	{
-		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "F://files/release//bin//dot.exe");
+		GraphViz g =new GraphViz("D://temp/"+fName+"/rPath", "D:\\download\\graphviz-2.38\\release\\bin\\dot.exe");
         g.start_graph();
     	System.out.println("");
     	System.out.println("*************");
