@@ -87,13 +87,13 @@ public class SimpleFrame extends JFrame {
 			public void actionPerformed(ActionEvent event)
 			{
 				southPanel.removeAll();
-				Graph graph=new Graph();
 				try {
-					graph.createGraph(textField.getText());
-				} catch (IOException e) {
-					// TODO 自动生成的 catch 块
-					e.printStackTrace();
-				}
+          LoadCtrl.createGraph(textField.getText());
+        } catch (IOException e1) {
+          // TODO Auto-generated catch block
+          e1.printStackTrace();
+        }
+				
 				JButton showButton= new JButton("展示有向图");
 				JButton spButton = new JButton("最短路径查询");
 				JButton rdButton = new JButton("随机游走");
@@ -138,7 +138,9 @@ public class SimpleFrame extends JFrame {
 								String word1 = null, word2 = null; 
 								word1 = textField1.getText();
 								word2 = textField2.getText();
-								textArea.append(graph.queryBridgeWords(word1, word2)+"\n");
+								BridgeWordsCtrl bwCtrl = new BridgeWordsCtrl();
+								textArea.append(bwCtrl.queryBridge(word1, word2)+"\n");
+								
 							}
 						});
 					}
@@ -162,7 +164,9 @@ public class SimpleFrame extends JFrame {
 							{
 								String word1 = null;
 								word1 = textField1.getText();
-								textArea.append(graph.generateNewText(word1)+"\n");
+								BridgeWordsCtrl bwCtrl = new BridgeWordsCtrl();
+                textArea.append(bwCtrl.generateNewText(word1)+"\n");
+								
 							}
 						});
 					}
@@ -198,8 +202,9 @@ public class SimpleFrame extends JFrame {
 										String word1 = null, word2 = null; 
 										word1 = textField1.getText();
 										word2 = textField2.getText();
-								      
-										path=graph.calcShortesePath(word1, word2);
+								    
+										SPCtrl spctrl = new SPCtrl(); 
+										path=spctrl.calcShortesePath(word1, word2);
 										
 										if(path.length==1&&path[0].split(" ")[0].equals("No")) { textArea.append("0条路径\n"); }
 										else { textArea.append(path.length+"条路径\n"); }
@@ -238,6 +243,7 @@ public class SimpleFrame extends JFrame {
 						
 					}
 				});
+				RandomWalkCtrl rwCtrl = new RandomWalkCtrl();
 				rdButton.addActionListener(new ActionListener()
 				{
 					int loc;
@@ -258,8 +264,9 @@ public class SimpleFrame extends JFrame {
 						{
 							public void actionPerformed(ActionEvent event)
 							{
-								graph.startRandomWalk();
-								loc = graph.randomWalk(-1);
+								
+								rwCtrl.startRandomWalk();
+								loc = rwCtrl.randomWalk(-1);
 								randPath = 1;
 								
 							}
@@ -270,11 +277,13 @@ public class SimpleFrame extends JFrame {
 							public void actionPerformed(ActionEvent event)
 							{
 								Random rand = new Random();
-								loc = graph.randomWalk(rand.nextInt(loc));
+								loc = rwCtrl.randomWalk(rand.nextInt(loc));
+								
 								if (loc == -1) 
 								{
 									southPanel.remove(continueButton);
-									textArea.append(graph.getRandPath()+"\n");
+									
+									textArea.append(rwCtrl.getRandPath()+"\n");
 									textArea.append("finish!");
 									return;
 								}
@@ -294,7 +303,8 @@ public class SimpleFrame extends JFrame {
 								//centerPanel.setIcon(new ImageIcon("D://temp/"+fName+"/rPath/dotGif"+randPath+".gif"));
 								System.out.println(randPath);
 								validate();
-								textArea.append(graph.getRandPath()+"\n");
+								
+								textArea.append(rwCtrl.getRandPath()+"\n");
 								System.out.println(randPath);
 								randPath++;
 							}
@@ -312,35 +322,10 @@ public class SimpleFrame extends JFrame {
 						});
 					}
 					
-							/*public void actionPerformed(ActionEvent event) 
-							{
-								String str;
-								str=graph.randomWalk();
-								FileWriter fileWritter=null;
-								try {
-									fileWritter = new FileWriter(new File("D://temp/generatetext.txt"),false);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             BufferedWriter bufferWritter = new BufferedWriter(fileWritter);
-					             try {
-									bufferWritter.write(str);
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-					             try {
-									bufferWritter.close();
-								} catch (IOException e) {
-									// TODO 自动生成的 catch 块
-									e.printStackTrace();
-								}
-								
-							}*/
 						});
-				graph.show();
-				graph.showDirectedGraph();
+				ShowCtrl sc = new ShowCtrl();
+				sc.show();
+				
 			}
 		});
 
@@ -366,24 +351,3 @@ public class SimpleFrame extends JFrame {
 }
 
 
-/*
-class ImageComponent extends JPanel
-{
-	public static final int DEFAULT_WIDTH = 300;
-	public static final int DEFAULT_HEIGHT = 200;
-	
-	private Image image;
-	
-	public ImageComponent(int i)
-	{
-		image = new ImageIcon("D://temp/dotGif"+i+".gif").getImage();
-	}
-	
-	public void paintComponent(Graphics g)  //绘制组件
-	{
-		if(image==null) return;
-		g.drawImage(image, 0, 0, null);
-	}
-	
-	public Dimension getPerferredSize() { return new Dimension(DEFAULT_WIDTH,DEFAULT_HEIGHT); } //组件大小？
-}*/

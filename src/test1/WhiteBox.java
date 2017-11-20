@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import test1.Graph;
+
 public class WhiteBox {
 
   @Test
